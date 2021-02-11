@@ -37,6 +37,7 @@ $ docker build -t valheim .
 
 # Running with port forwarding
 $ docker run -it --name valheim \
+  --restart always \
   -v $PWD/data:/data \
   -p 2456:2456/tcp \
   -p 2456:2456/udp \
@@ -48,6 +49,7 @@ $ docker run -it --name valheim \
 
 # Running the container using the host network
 $ docker run -it --name valheim \
+  --restart always \
   -v $PWD/data:/data \
   --network host valheim
 ```

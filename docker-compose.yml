@@ -2,6 +2,7 @@ version: "3"
 services:
   valheim:
     image: valheim:latest
+    restart: always
     build:
       context: .
       dockerfile: ./Dockerfile
