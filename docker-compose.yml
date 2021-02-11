@@ -1,0 +1,20 @@
+version: "3"
+services:
+  valheim:
+    image: valheim:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - SERVER_NAME="Best Valheim Server"
+      - SERVER_PASSWORD="youshouldreallychangethis"
+      - SERVER_ADMINS="111111111111111,222222222222222"
+    ports:
+      - "2456:2456/udp"
+      - "2456:2456/tcp"
+      - "2457:2457/udp"
+      - "2457:2457/tcp"
+      - "2458:2458/udp"
+      - "2458:2458/tcp"
+    volumes:
+    - ./data:/data
